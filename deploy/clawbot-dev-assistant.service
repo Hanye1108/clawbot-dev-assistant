@@ -1,0 +1,15 @@
+[Unit]
+Description=clawbot-dev-assistant (WeChat dev assistant: daily GitHub trending)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__APP_DIR__
+ExecStart=__APP_DIR__/.venv/bin/python -m devbot
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

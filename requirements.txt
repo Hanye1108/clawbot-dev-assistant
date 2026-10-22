@@ -1,0 +1,6 @@
+openai>=1.0
+requests>=2.25
+apscheduler>=3.10,<4
+qrcode>=7.0
+tzdata
+backports.zoneinfo; python_version < "3.9"
