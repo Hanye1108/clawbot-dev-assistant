@@ -136,12 +136,8 @@ def main():
     else:
         hb = health_buddy_accounts()
         if hb:
-            print(f"ℹ️  健康助手（{config.HEALTH_BUDDY_DIR}）里绑定了这些账号：{', '.join(hb)}")
-            print("   如果其中某个（通常是 me）就是你自己的微信，建议先让健康助手放开它，避免两个程序抢同一个微信的消息：")
-            print(f"     mv {config.HEALTH_BUDDY_DIR}/data/ilink/me.json {config.HEALTH_BUDDY_DIR}/data/ilink/me.json.bak")
-            print("     systemctl restart clawbot-health-buddy")
-            print("   你女朋友那边不受影响；健康助手只是少了给你发告警的通道，")
-            print("   本项目的看门狗会盯着它的服务状态和登录过期日志，替你接住告警。想恢复把 .bak 改回来即可。")
+            print(f"ℹ️  同一台服务器上的健康助手绑定了：{', '.join(hb)}。")
+            print("   只要这里面没有你自己的微信，就互不影响，直接扫码就行；两个项目各管各的。")
         if yes("现在用你自己的微信扫码绑定吗？"):
             run_self("login", "me")
 

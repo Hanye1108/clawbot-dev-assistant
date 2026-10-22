@@ -14,7 +14,7 @@
 | 技术问答 | 随便问，需要最新信息会联网搜索；发 GitHub 链接会读 README |
 | 笔记 | 「记一下……」；「笔记」看最近的；配置了 Memos 会同步过去 |
 | 关注方向 | 「我的关注」「关注 RK3588」「取消关注 STM32」 |
-| 服务器看门狗 | 「服务器」看负载/内存/磁盘/服务/容器；健康助手等服务停了、ClawBot 登录过期、磁盘快满、DeepSeek 余额不足会主动提醒 |
+| 服务器看门狗 | 「服务器」看负载/内存/磁盘/服务/容器；磁盘快满、DeepSeek 余额不足会主动提醒；可选监视指定的 systemd 服务 |
 | 补发 | 微信只允许在你最近一次发消息后约 23 小时内主动推送；超时的推送会暂存，你下次说话时补发 |
 
 ## 不会和现有服务冲突
@@ -81,7 +81,7 @@ cd /opt/clawbot-dev-assistant
 - `EMBEDDED_TOPICS` / `EMBEDDED_LANGS`：嵌入式候选的来源
 - `GITHUB_TOKEN`：可选，不填每小时 60 次 API 额度，日常够用
 - `MEMOS_URL` / `MEMOS_TOKEN`：可选，笔记同步到你的 Memos
-- `WATCH_SERVICES`：看门狗盯哪些 systemd 服务，默认 `clawbot-health-buddy`
+- `WATCH_SERVICES`：可选，看门狗盯哪些 systemd 服务，默认不监视
 
 改完 `systemctl restart clawbot-dev-assistant`。
 

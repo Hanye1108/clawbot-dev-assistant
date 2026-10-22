@@ -75,8 +75,8 @@ INTERESTS = env_list(
 MEMOS_URL = env("MEMOS_URL").rstrip("/")
 MEMOS_TOKEN = env("MEMOS_TOKEN")
 
-# 服务器看门狗：这些 systemd 服务停了就提醒你（逗号分隔，留空关闭）
-WATCH_SERVICES = env_list("WATCH_SERVICES", "clawbot-health-buddy") if env("WATCH_SERVICES", "x") else []
+# 服务器看门狗：这些 systemd 服务停了就提醒你（逗号分隔，默认不监视任何服务）
+WATCH_SERVICES = env_list("WATCH_SERVICES", "") if env("WATCH_SERVICES") else []
 DISK_ALERT_PERCENT = env_int("DISK_ALERT_PERCENT", 90)
 
 # 时区与数据目录
